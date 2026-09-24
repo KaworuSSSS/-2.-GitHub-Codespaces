@@ -5,6 +5,8 @@
 #pragma config LVP = OFF
 #pragma config PBADEN = OFF
  
+#define _XTAL_FREQ 8000000
+ 
 void main(void)
 {
 TRISBbits.TRISB0 = 0;
@@ -12,11 +14,9 @@ TRISBbits.TRISB0 = 0;
 while(1)
 {
 LATBbits.LATB0 = 1;
- 
-for(unsigned long i=0;i<50000;i++);
+__delay_ms(500);
  
 LATBbits.LATB0 = 0;
- 
-for(unsigned long i=0;i<50000;i++);
+__delay_ms(500);
 }
 }
